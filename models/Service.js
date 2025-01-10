@@ -1,10 +1,12 @@
 const mongoose = require('mongoose');
 
-const ServiceSchema = new mongoose.Schema({
+const RequestSchema = new mongoose.Schema({
+    mobile: { type: String, required: true },
+    email: { type: String, required: true },
     type: { type: String, required: true },
-    code: { type: String, required: true },
-    amount: { type: Number, required: true },
-    detail: { type: Array, required: true }
+    amt: { type: Number, required: true },
+    msg: { type: String, required: true },
+    code: { type: String, required: true }
 });
 
-module.exports = mongoose.model('Service', ServiceSchema);
+module.exports = mongoose.model('Request', RequestSchema);
